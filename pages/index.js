@@ -4,7 +4,7 @@ import { Row, Col, Code, Spacer, Divider } from '@zeit-ui/react'
 const Home = () => (
   <Layout title='Welcome to my site'>
     <Spacer y={2} />
-    <Row justify='center' align='middle' style={{ height: '35vh' }} gap={2}>
+    <Row justify='center' align='middle' gap={2}>
       <div className='wrapper'>
         <Col span={24}>
           <h2>My name is</h2>
@@ -13,7 +13,7 @@ const Home = () => (
           </h1>
           <Spacer y={2} />
           <h2>
-            I'm a full-stack engineer living in <a>Dallas Texas</a>
+            I'm a full-stack engineer living in <a>Dallas, Texas</a>
           </h2>
         </Col>
       </div>

@@ -1,7 +1,19 @@
 import Layout from '../components/layout'
-import { Row, Col, Code, Divider, Text, Spacer, Collapse } from '@zeit-ui/react'
+import {
+  useTheme,
+  Row,
+  Col,
+  Code,
+  Divider,
+  Text,
+  Spacer,
+  Collapse,
+} from '@zeit-ui/react'
+import data from '../lib/data/about.json'
 
 export default function About() {
+  const { palette } = useTheme()
+
   return (
     <Layout title='About Salvatore Argentieri'>
       <Row gap={2}>
@@ -14,33 +26,19 @@ export default function About() {
       </Row>
       <Row gap={2} className='mobile'>
         <Col span={24}>
-          <Text h3>Dev Journey</Text>
-          <Text>
-            I've been exposed to code my entire life. It wasn't until a few
-            years ago that I decided to make a make a career for myself as a
-            software engineer. In order to learn as much as possibly could, as
-            quickly as I could, I enrolled in Southern Methodist University's
-            full-stack web development program. Upon graduation I worked at
-            General Assembly's Software Engineering Immersive as the Associate
-            Instructor of the Dallas campus. Currently I am a freelance
-            developer serving the DFW metroplex.
+          <Text h3 style={{ color: palette.violet }}>
+            {data.title}
           </Text>
+          <Text>{data.devBody}</Text>
         </Col>
       </Row>
       <Spacer y={2} />
       <Row gap={2}>
         <Col span={24}>
-          <Text h3>What Drives Me</Text>
-          <Text>
-            My passion is learning the modern best practices, and frame works. I
-            currently utilize the tech suite built by the team over at{' '}
-            <a href='https://zeit.co/' target='_blank'>
-              Zeit
-            </a>{' '}
-            for my freelance projects as it allows me to develop a variety of
-            powerful JAM stack applications in a timely manner while leveraging
-            performance, SEO, and more.
+          <Text h3 style={{ color: palette.violet }}>
+            {data.title2}
           </Text>
+          <Text>{data.driveBody}</Text>
         </Col>
       </Row>
       <Spacer y={2} />
@@ -48,10 +46,32 @@ export default function About() {
         <Col span={24}>
           <Collapse.Group>
             <Collapse title='Front End Skills'>
-              <Text>HTML5, CSS3, ES6, React.js, Next.js, Gatsby.js</Text>
+              <ul>
+                <li>HTML5</li>
+                <li> CSS3</li>
+                <li>ES6</li>
+                <li>React,js</li>
+                <li>Next.js</li>
+                <li>Deployment</li>
+              </ul>
             </Collapse>
-            <Collapse title='Back End Skills'>
-              <Text>Node.js, Express.js, Python, Mongo DB, SQL</Text>
+            <Collapse title='Back End SKills'>
+              <ul>
+                <li>Node.js,</li>
+                <li>Express.js, </li>
+                <li>Python,</li>
+                <li>Mongo DB</li>
+                <li>SQL,</li>
+                <li>User Authentication</li>
+              </ul>
+            </Collapse>
+            <Collapse title='Professional SKills'>
+              <ul>
+                <li> Effective Communicator</li>
+                <li> Team Player</li>
+                <li>Punctual,</li>
+                <li>Extremely Outgoing</li>
+              </ul>
             </Collapse>
           </Collapse.Group>
         </Col>
