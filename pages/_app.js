@@ -17,7 +17,6 @@ export default function MyApp({ Component, pageProps }) {
       <ThemeContext.Provider
         value={{
           themeType: themeType,
-          setThemeType: setThemeType,
           switchThemes: switchThemes
         }}
       >
