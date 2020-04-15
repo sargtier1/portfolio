@@ -1,15 +1,18 @@
-// import { useContext } from "react";
-// import ThemeContext from "../lib/context/theme";
-// import { Toggle } from "@zeit-ui/react";
+import ThemeContext from '../lib/context/theme'
+import { Toggle, Spacer } from '@zeit-ui/react'
+import { Moon, Sun } from 'react-feather'
 
-// export default function ToggleTheme() {
-//   console.log(useContext(ThemeContext));
+export default function ToggleTheme() {
+  const { switchThemes, themeType } = React.useContext(ThemeContext)
 
-//   return (
-//     <div>
-//       Night
-//       <Toggle initialChecked={themeType === "light"} onChange={switchThemes} />
-//       Day
-//     </div>
-//   );
-// }
+  return (
+    <>
+      <Moon size={20} />
+      <Spacer x={0.5} />
+      <Toggle initialChecked={themeType === 'light'} onChange={switchThemes} />
+      <Spacer x={0.5} />
+      <Sun size={20} />
+      <style jsx>{``}</style>
+    </>
+  )
+}

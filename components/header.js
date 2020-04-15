@@ -1,81 +1,64 @@
-import ThemeContext from "../lib/context/theme";
-import { Link } from "@zeit-ui/react";
-import { X, Menu } from "react-feather";
+import Link from 'next/link'
+import { Text, ButtonDropdown, Spacer } from '@zeit-ui/react'
+import { Box } from 'react-feather'
+import ToggleTheme from './toggleTheme'
 
-export default function Header({ isSmall }) {
-  const { themeType } = React.useContext(ThemeContext);
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  function openNav(e) {
-    e.preventDefault();
-    setIsOpen(true);
-  }
-
-  function closeNav(e) {
-    e.preventDefault();
-    setIsOpen(false);
-  }
-
-  return isSmall ? (
-    <>
-      <header>
-        <div>brand | Small</div>
-        <div>
-          <Link style={{ zIndex: 15 }} pure block onClick={openNav}>
-            {isOpen ? (
-              <X size={40} color={themeType === "light" ? "black" : "white"} />
-            ) : (
-              <Menu
-                size={40}
-                color={themeType === "light" ? "black" : "white"}
-              />
-            )}
+export default function Header() {
+  return (
+    <header>
+      <div className='section-wrapper'>
+        <div className='center'>
+          <Link href='/'>
+            <a>
+              <Box size={45} />
+            </a>
           </Link>
         </div>
-      </header>
+        <div className='center'>
+          <ButtonDropdown>
+            <ButtonDropdown.Item main>Menu</ButtonDropdown.Item>
+            <ButtonDropdown.Item>
+              <Link href='/about'>
+                <a>About</a>
+              </Link>
+            </ButtonDropdown.Item>
+            <ButtonDropdown.Item>
+              <Link href='/blog'>
+                <a>Blog</a>
+              </Link>
+            </ButtonDropdown.Item>
+            <ButtonDropdown.Item>
+              <Link href='/contact'>
+                <a>Contact</a>
+              </Link>
+            </ButtonDropdown.Item>
+            <ButtonDropdown.Item>
+              <ToggleTheme />
+            </ButtonDropdown.Item>
+          </ButtonDropdown>
+        </div>
+      </div>
+      <div className='section-wrapper nav-content'></div>
       <style jsx>{`
+        .section-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin: 1rem;
+        }
+        .nav-content {
+          width: 100%;
+          height: 100%;
+        }
         header {
           display: flex;
-          justify-content: space-around;
-          align-items: center;
+          flex-direction: column;
+          padding: 1rem;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
         }
       `}</style>
-      <Nav isOpen={isOpen} closeNav={closeNav} themeType={themeType} />
-    </>
-  ) : (
-    <>
-      <header>
-        <div>brand | Big</div>
-        links
-      </header>
-    </>
-  );
-}
-
-function Nav({ isOpen, closeNav, themeType }) {
-  return (
-    <>
-      <div onClick={closeNav} className="nav-wrapper">
-        <nav>links go here</nav>
-      </div>
-      <style jsx>{`
-        .nav-wrapper {
-          height: 100%;
-          min-width: 100%;
-          position: fixed !important;
-          z-index: 1;
-          overflow: auto;
-          margin-top: -40px;
-        }
-      `}</style>
-      <style jsx>{`
-        .nav-wrapper {
-          display: ${isOpen ? "block" : "none"};
-          background-color: ${themeType === "light"
-            ? "#ffffffd0"
-            : "#ffffffa0"};
-        }
-      `}</style>
-    </>
-  );
+    </header>
+  )
 }

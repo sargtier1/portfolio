@@ -1,37 +1,29 @@
-import Head from "next/head";
-import Header from "./header";
-import Footer from "./footer";
+import Head from 'next/head'
+import Header from './header'
+import Footer from './footer'
 
 export default class Layout extends React.Component {
-  state = {
-    isSmall: false
-  };
-
-  componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
-  }
-
-  resize() {
-    this.setState({ isSmall: window.innerWidth <= 840 });
-  }
-
   render() {
-    const { children, title } = this.props;
+    const { children, title } = this.props
     return (
       <>
         <Head>
           <title>{title}</title>
         </Head>
-        <Header isSmall={this.state.isSmall} />
+        <Header />
         <main>{children}</main>
         <Footer />
-        <style jsx>{`
+        <style global jsx>{`
           main {
             min-height: 85vh;
           }
+          .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         `}</style>
       </>
-    );
+    )
   }
 }
