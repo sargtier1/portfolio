@@ -1,0 +1,32 @@
+import { ZEITUIProvider, CSSBaseline } from "@zeit-ui/react";
+import ThemeContext from "../lib/context/theme";
+
+export default function MyApp({ Component, pageProps }) {
+  const [themeType, setThemeType] = React.useState('light');
+  const switchThemes = () => {
+    setThemeType(lastThemeType =>
+      lastThemeType === "dark" ? "light" : "dark"
+    );
+  };
+
+  return (
+    <>
+      {/* insert META component here */}
+
+      {/* === === === === === === === */}
+      <ThemeContext.Provider
+        value={{
+          themeType: themeType,
+          setThemeType: setThemeType,
+          switchThemes: switchThemes
+        }}
+      >
+        <ZEITUIProvider theme={{ type: themeType }}>
+          <CSSBaseline>
+            <Component {...pageProps} />
+          </CSSBaseline>
+        </ZEITUIProvider>
+      </ThemeContext.Provider>
+    </>
+  );
+}
