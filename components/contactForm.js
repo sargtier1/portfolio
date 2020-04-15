@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Input, Spacer, Textarea, Button } from '@zeit-ui/react'
+import baseUrl from '../lib/baseUrl'
+import axios from 'axios'
 
 export default function ContactForm() {
   const [status, setStatus] = useState({
@@ -87,11 +89,7 @@ export default function ContactForm() {
             ghost
             loading={status.submitting ? true : false}
           >
-            {!status.submitting
-              ? !status.submitted
-                ? 'Submit'
-                : 'Submitted'
-              : 'Submitting...'}
+            Submit
           </Button>
           <Spacer />
         </div>
