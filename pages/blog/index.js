@@ -7,7 +7,7 @@ export default function BlogPage({ allPosts }) {
   console.log(allPosts)
   return (
     <Layout title='My Blog posts'>
-      <Row gap={2}>
+      <Row gap={0}>
         <Col span={24}>
           <PostList posts={allPosts} />
         </Col>

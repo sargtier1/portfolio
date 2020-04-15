@@ -29,14 +29,13 @@ export default function Post({ post, width }) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                width={width}
               />
             </Col>
           </Row>
-          <Spacer y={2} />
+          <Spacer y={1} />
           <Row justify='center'>
             <Col>
-              <PostBody content={post.content} width={width} />
+              <PostBody content={post.content} />
             </Col>
           </Row>
         </Layout>

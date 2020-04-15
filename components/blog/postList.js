@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Display, Text } from '@zeit-ui/react'
+import { Display, Text, Spacer } from '@zeit-ui/react'
 import Date from './date'
 
 const PostList = ({ posts }) => {
@@ -10,24 +10,26 @@ const PostList = ({ posts }) => {
           <Link key={i} href='/blog/[slug]' as={`/blog/${slug}`}>
             <a className='cards'>
               <Display
+                style={{ maxWidth: '650px' }}
                 shadow
                 caption={
                   <div className='preview-title'>
                     <Text h3>{title}</Text>
-                    <Text p>
+                    <Text h5 type='secondary'>
                       <Date dateString={date} />
                     </Text>
                   </div>
                 }
               >
-                <img width={375} height={225} src={coverImage} alt={title} />
+                <img width='100%' height='auto' src={coverImage} alt={title} />
               </Display>
             </a>
           </Link>
         ))}
+      <Spacer y={0.5} />
       <style jsx>{`
         .cards {
-          width: 500px;
+          max-width: 500px;
         }
         .preview-title {
           display: flex;
@@ -35,13 +37,12 @@ const PostList = ({ posts }) => {
           justify-content: space-between;
         }
         @media (max-width: 840px) {
-          .cards {
-            width: 325px;
-          }
+         
           .preview-title {
             flex-direction: column;
           }
         }
+        @
       `}</style>
     </>
   )

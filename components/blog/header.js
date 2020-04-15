@@ -21,7 +21,12 @@ export default function PostHeader({ title, coverImage, date }) {
       </div>
       <Spacer y={2} />
       <div className='coverImage'>
-        <Image className='post-image' height={250} src={coverImage} />
+        <Image
+          className='post-image'
+          width='100%'
+          height='auto'
+          src={coverImage}
+        />
       </div>
       <style jsx>{`
         .back {
