@@ -4,7 +4,6 @@ import PostList from '../../components/blog/postList'
 import { getAllPosts } from '../../lib/api'
 
 export default function BlogPage({ allPosts }) {
-  console.log(allPosts)
   return (
     <Layout title='My Blog posts'>
       <Row gap={0}>

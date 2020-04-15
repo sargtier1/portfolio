@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import Link from 'next/link'
 import { Text, ButtonDropdown, Spacer } from '@zeit-ui/react'
 import { Box } from 'react-feather'
@@ -17,20 +18,37 @@ export default function Header() {
         <div className='center'>
           <ButtonDropdown>
             <ButtonDropdown.Item main>Menu</ButtonDropdown.Item>
-            <ButtonDropdown.Item>
-              <Link href='/about'>
-                <a>About</a>
-              </Link>
+
+            <ButtonDropdown.Item
+              onClick={() => {
+                Router.push('/about')
+              }}
+            >
+              About
             </ButtonDropdown.Item>
-            <ButtonDropdown.Item>
-              <Link href='/blog'>
-                <a>Blog</a>
-              </Link>
+
+            <ButtonDropdown.Item
+              onClick={() => {
+                Router.push('/projects')
+              }}
+            >
+              Projects
             </ButtonDropdown.Item>
-            <ButtonDropdown.Item>
-              <Link href='/contact'>
-                <a>Contact</a>
-              </Link>
+
+            <ButtonDropdown.Item
+              onClick={() => {
+                Router.push('/blog')
+              }}
+            >
+              Blog
+            </ButtonDropdown.Item>
+
+            <ButtonDropdown.Item
+              onClick={() => {
+                Router.push('/contact')
+              }}
+            >
+              Contact
             </ButtonDropdown.Item>
             <ButtonDropdown.Item>
               <ToggleTheme />
