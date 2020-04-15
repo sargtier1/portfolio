@@ -18,3 +18,4 @@ Be sure to check back often as I have several posts ready to be published, just 
 1. I want to pull data in from my github and display it on the portfolio page. I'm holding off as I have several new projects I'm working on and these take precedence.
 2. Share post button on each blog page.
 3. update design on the landing page.
+4. Printable resume

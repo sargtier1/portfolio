@@ -7,7 +7,7 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/html'
 import Layout from '../../components/layout'
 
-export default function Post({ post, width }) {
+export default function Post({ post }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
