@@ -48,28 +48,28 @@ export default function About() {
             <Collapse title='Front End Skills'>
               <ul>
                 <li>HTML5</li>
-                <li> CSS3</li>
+                <li>CSS3</li>
                 <li>ES6</li>
-                <li>React,js</li>
+                <li>React.js</li>
                 <li>Next.js</li>
                 <li>Deployment</li>
               </ul>
             </Collapse>
             <Collapse title='Back End SKills'>
               <ul>
-                <li>Node.js,</li>
-                <li>Express.js, </li>
-                <li>Python,</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Python</li>
                 <li>Mongo DB</li>
-                <li>SQL,</li>
+                <li>SQL</li>
                 <li>User Authentication</li>
               </ul>
             </Collapse>
             <Collapse title='Professional SKills'>
               <ul>
-                <li> Effective Communicator</li>
-                <li> Team Player</li>
-                <li>Punctual,</li>
+                <li>Effective Communicator</li>
+                <li>Team Player</li>
+                <li>Punctual</li>
                 <li>Extremely Outgoing</li>
               </ul>
             </Collapse>
