@@ -5,7 +5,7 @@
 'date': '2020-04-15'
 ---
 
-I will post the terminal commands and code snippets after each explanation so that way you can reference the commands and code.
+I will post the terminal commands and code snippets after each explanation so that way you can reference the commands and code. I am assuming you have an understanding of the basics as this is not geared for complete beginners.
 
 ## Setting up a Next.js application
 
