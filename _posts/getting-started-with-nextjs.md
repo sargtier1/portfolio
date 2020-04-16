@@ -1,5 +1,5 @@
 ---
-'title': Salvatore Argentieri
+'title': 'Getting started with the basics of Next.js'
 'excerpt': 'This is a quick article talking about everything you need to know to get set up with Next.js.'
 'coverImage': 'https://assets.zeit.co/image/upload/q_auto/front/solutions/next-og-image.png'
 'date': '2020-04-15'
