@@ -27,13 +27,13 @@ export default function Header() {
               About
             </ButtonDropdown.Item>
 
-            {/* <ButtonDropdown.Item
+            <ButtonDropdown.Item
               onClick={() => {
                 Router.push('/projects')
               }}
             >
               Projects
-            </ButtonDropdown.Item> */}
+            </ButtonDropdown.Item>
 
             <ButtonDropdown.Item
               onClick={() => {
