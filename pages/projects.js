@@ -1,10 +1,9 @@
 import Layout from '../components/layout'
-import { Row, Col, Card, Spacer, Divider, Text } from '@zeit-ui/react'
+import { Row, Col, Card, Spacer, Divider, Text, Code } from '@zeit-ui/react'
 import { GitBranch, GitHub, GitMerge, GitPullRequest } from 'react-feather'
 import axios from 'axios'
 
 export default function Projects({ data }) {
-  console.log(data)
   return (
     <Layout title="What I've worked on">
       <Row gap={2}>
@@ -28,7 +27,6 @@ export default function Projects({ data }) {
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
-          max-width: 350%;
         }
       `}</style>
     </Layout>
@@ -40,12 +38,14 @@ function ProjectCard({ project }) {
   return (
     <>
       <div className='card-wrapper'>
-        <Card hoverable style={{ width: '350px' }}>
+        <Card hoverable style={{ width: '325px' }}>
           <div className='card-header'>
             <GitBranch size={35} />
             <Spacer x={0.5} />
             <a href={`${html_url}`} target='_blank'>
-              <h4 style={{ textTransform: 'capitalize' }}>{name}</h4>
+              <h4 style={{ textTransform: 'capitalize' }}>
+                <Code>{name}</Code>
+              </h4>
             </a>
           </div>
           <div className='card-body'>
