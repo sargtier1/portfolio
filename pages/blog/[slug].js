@@ -6,6 +6,7 @@ import PostBody from '../../components/blog/body'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/html'
 import Layout from '../../components/layout'
+import Meta from '../../components/meta'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -20,9 +21,7 @@ export default function Post({ post }) {
         </Row>
       ) : (
         <Layout title={post.title}>
-          <Head>
-            <meta property='og:image' content={post.coverImage} />
-          </Head>
+          <Meta openGraph={post.coverImage} />
           <Row justify='center'>
             <Col>
               <PostHeader

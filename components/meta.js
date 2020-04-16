@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import SEO from '../lib/data/SEO.json'
 
-export default function Meta() {
+export default function Meta({ title, openGraph }) {
   return (
     <Head>
-      <title>{SEO.title}</title>
+      <title>{title ? title : SEO.title}</title>
       <meta name='description' content={SEO.description} />
-      <meta property='og:type' content={SEO.openGraph.type} />
+      <meta
+        property='og:type'
+        content={openGraph ? openGraph : SEO.openGraph.type}
+      />
       <meta name='og:title' property='og:title' content={SEO.openGraph.title} />
       <meta
         name='og:description'

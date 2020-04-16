@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
+import Meta from './meta'
 
 export default class Layout extends React.Component {
   render() {
     const { children, title } = this.props
     return (
       <>
-        <Head>
-          <title>{title}</title>
-        </Head>
+        <Meta title={title} />
         <Header />
         <main>{children}</main>
         <Footer />
