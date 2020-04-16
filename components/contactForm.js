@@ -4,13 +4,13 @@ import baseUrl from '../lib/baseUrl'
 import axios from 'axios'
 
 export default function ContactForm() {
-  const [status, setStatus] = useState({
+  const [status, setStatus] = React.useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null },
   })
 
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] =  React.useState({
     email: '',
     message: '',
   })
@@ -67,9 +67,10 @@ export default function ContactForm() {
           <Spacer />
           <Input
             width='100%'
-            value={inputs.email}
             id='email'
             type='email'
+            required
+            value={inputs.email}
             onChange={handleOnChange}
           />
           <Spacer />
@@ -78,8 +79,9 @@ export default function ContactForm() {
           <Textarea
             style={{ width: '100%' }}
             id='message'
-            onChange={handleOnChange}
+            required
             value={inputs.message}
+            onChange={handleOnChange}
           />
           <Spacer />
           <Button

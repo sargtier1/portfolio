@@ -1,6 +1,12 @@
 import Layout from '../components/layout'
 import { Row, Col, Card, Spacer, Divider, Text, Code } from '@zeit-ui/react'
-import { GitBranch, GitHub, GitMerge, GitPullRequest } from 'react-feather'
+import {
+  GitBranch,
+  GitHub,
+  GitMerge,
+  GitPullRequest,
+  ExternalLink,
+} from 'react-feather'
 import axios from 'axios'
 
 export default function Projects({ data }) {
@@ -44,7 +50,11 @@ function ProjectCard({ project }) {
             <Spacer x={0.5} />
             <a href={`${html_url}`} target='_blank'>
               <h4 style={{ textTransform: 'capitalize' }}>
-                <Code>{name}</Code>
+                <Code style={{ display: 'flex', alignItems: 'center' }}>
+                  {name}
+                  <Spacer y={0.125} />
+                  <ExternalLink size={15} />
+                </Code>
               </h4>
             </a>
           </div>

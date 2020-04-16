@@ -1,10 +1,11 @@
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Text, ButtonDropdown, Spacer } from '@zeit-ui/react'
 import { Box } from 'react-feather'
 import ToggleTheme from './toggleTheme'
 
 export default function Header() {
+  const router = useRouter()
   return (
     <header>
       <div className='section-wrapper'>
@@ -17,7 +18,7 @@ export default function Header() {
         </div>
         <div className='center'>
           <ButtonDropdown>
-            <ButtonDropdown.Item main>Menu</ButtonDropdown.Item>
+            <ButtonDropdown.Item main>{router.pathname}</ButtonDropdown.Item>
 
             <ButtonDropdown.Item
               onClick={() => {
@@ -50,9 +51,11 @@ export default function Header() {
             >
               Contact
             </ButtonDropdown.Item>
+
             <ButtonDropdown.Item>
               <ToggleTheme />
             </ButtonDropdown.Item>
+            
           </ButtonDropdown>
         </div>
       </div>
