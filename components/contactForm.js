@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import { Input, Spacer, Textarea, Button } from '@zeit-ui/react'
+import { Input, Spacer, Textarea, Button, useToasts } from '@zeit-ui/react'
 import baseUrl from '../lib/baseUrl'
 import axios from 'axios'
 
 export default function ContactForm() {
+  const [toasts, setToast] = useToasts()
+
   const [status, setStatus] = React.useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null },
   })
 
-  const [inputs, setInputs] =  React.useState({
+  const [inputs, setInputs] = React.useState({
     email: '',
     message: '',
   })
@@ -22,6 +24,7 @@ export default function ContactForm() {
         submitting: false,
         info: { error: false, msg: msg },
       })
+      setToast({ text: msg })
       setInputs({
         email: '',
         message: '',
@@ -30,6 +33,7 @@ export default function ContactForm() {
       setStatus({
         info: { error: true, msg: msg },
       })
+      setToast({ text: msg })
     }
   }
 
@@ -96,12 +100,12 @@ export default function ContactForm() {
           <Spacer />
         </div>
       </form>
-      {status.info.error && (
+      {/* {status.info.error && (
         <div className='error'>Error: {status.info.msg}</div>
       )}
       {!status.info.error && status.info.msg && (
         <div className='success'>{status.info.msg}</div>
-      )}
+      )} */}
       <style jsx>{`
         .form-wrapper {
           display: flex;
