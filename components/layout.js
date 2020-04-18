@@ -14,7 +14,7 @@ export default class Layout extends React.Component {
         <Footer />
         <style global jsx>{`
           main {
-            min-height: 75vh;
+            min-height: 60vh;
           }
           .center {
             display: flex;
